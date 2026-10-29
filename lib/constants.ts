@@ -1,9 +1,9 @@
 export const PERSONAL_INFO = {
   name: 'Mustafa Yamin',
-  title: 'Aspiring Frontend Developer & AI Enthusiast',
-  bio: 'Passionate about building modern UIs and experimenting with AI and web tools. Currently working at Stream Academy International.',
+  title: 'AI Engineer · Multi-Agent Systems & Computer Vision',
+  bio: 'I build AI systems that replace manual work in real businesses. AI Engineer at Inseyab, shipping multi-agent analytics, RAG and computer-vision platforms for enterprise clients across Pakistan and the Middle East, backed by a full-stack foundation in Next.js, React and FastAPI.',
   email: 'mustafayamin5@gmail.com',
-  location: 'Pakistan',
+  location: 'Karachi, Pakistan',
   resumeUrl: '/mustafa_portfolio.pdf'
 }
 
