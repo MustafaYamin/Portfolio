@@ -11,48 +11,63 @@ import { ErrorBoundary } from "@/components/ui/error-boundary"
 import { ExternalLink, Github, Code2, Star, GitFork, Calendar } from "lucide-react"
 // import { fetchGitHubRepos, type GitHubRepo } from "@/lib/github"
 
-const FEATURED_PROJECTS = [
+const FEATURED_PROJECTS: { name: string; description: string; github: string; live?: string; tags: string[] }[] = [
   {
-    name: "The Brands Bazar",
-    description: "A marketplace builder hackathon project for Brands Bazar.",
-    github: "https://github.com/MustafaYamin/Marketplace-Builder-Hackathon-Brands-Bazar/",
-    live: "https://the-brands-bazar.vercel.app/",
+    name: "Personal AI FTE",
+    description: "A local-first personal AI employee powered by Qwen Code and Obsidian that automates personal and business tasks 24/7.",
+    github: "https://github.com/MustafaYamin/Personal-AI-FTE",
+    tags: ["AI Agents", "Python", "Automation"],
   },
   {
-    name: "Static Ecommerce website",
-    description: "A static ecommerce website built with modern web technologies.",
-    github: "https://github.com/MustafaYamin/ecommerce-static-website/",
-    live: "https://ecommerce-static-website.vercel.app/",
+    name: "100 Free MCP Servers",
+    description: "A curated, documented collection of 100 free and open-source Model Context Protocol servers. My most-starred open-source project.",
+    github: "https://github.com/MustafaYamin/100-free-mcp-servers",
+    tags: ["MCP", "Open Source", "AI Tooling"],
+  },
+  {
+    name: "AI Event Planner",
+    description: "A conversational AI assistant that plans events, searches venues, manages Google Calendar and sends invitations, with real-time streaming responses.",
+    github: "https://github.com/MustafaYamin/AI-Event-Planner-Frontend",
+    tags: ["Next.js", "FastAPI", "OpenAI", "Function Calling"],
+  },
+  {
+    name: "AI Mustaqbil 2.0",
+    description: "Multi-agent systems hackathon build: autonomous AI pipelines where multiple agents think, collaborate and act together to solve real problems.",
+    github: "https://github.com/MustafaYamin/AI-Mustaqbil-2.0",
+    tags: ["Multi-Agent", "LLMs", "Hackathon"],
+  },
+  {
+    name: "Logistics CRM",
+    description: "A full-stack freight and agent management system with role-based access control, Excel bulk import and automated email workflows.",
+    github: "https://github.com/MustafaYamin/logistics-crm-nextjs",
+    tags: ["Next.js 14", "Prisma", "MySQL", "RBAC"],
+  },
+  {
+    name: "HandLoom",
+    description: "Real-time two-hand tracking that threads a glowing, animated web of light between your hands, right in the browser.",
+    github: "https://github.com/MustafaYamin/handLoom",
+    tags: ["Computer Vision", "JavaScript", "Creative Coding"],
+  },
+  {
+    name: "The Brands Bazar",
+    description: "An e-commerce marketplace built for the Marketplace Builder Hackathon with Next.js, TypeScript and a headless CMS.",
+    github: "https://github.com/MustafaYamin/Marketplace-Builder-Hackathon-Brands-Bazar",
+    live: "https://the-brands-bazar.vercel.app/",
+    tags: ["Next.js", "E-commerce", "Hackathon"],
   },
   {
     name: "Mommyology",
-    description: "A web project for Mommyology.",
-    github: "https://github.com/MustafaYamin/Mommyology/",
+    description: "A professional website redesign for Mommyology, a nature-based educational organisation for children.",
+    github: "https://github.com/MustafaYamin/Mommyology",
     live: "https://mommyology.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Client Project"],
   },
   {
-    name: "Unit convertor web app",
-    description: "A unit converter web app built with Streamlit.",
-    github: "https://github.com/MustafaYamin/Unit-Convertor-web-app",
-    live: "https://mustafayamin-unit-convertor-web-app-unit-convertor-ticnsd.streamlit.app/",
-  },
-  {
-    name: "Library manager web app",
-    description: "A personal library manager web app built with Streamlit.",
-    github: "https://github.com/MustafaYamin/Personal-Library-Manager",
-    live: "https://mustafayamin-personal-library-manager-library-lohcsi.streamlit.app/",
-  },
-  {
-    name: "Password strength checker",
-    description: "A password strength checker app built with Streamlit.",
-    github: "https://github.com/MustafaYamin/Password-Strength-Checker",
-    live: "https://mustafayamin-password-strength-checker-app-leuzde.streamlit.app/",
-  },
-  {
-    name: "Data Sweeper",
-    description: "A data sweeper app built with Streamlit.",
-    github: "https://github.com/MustafaYamin/Data_Sweeper",
-    live: "https://mustafayamin-data-sweeper-app-hy9n8w.streamlit.app/",
+    name: "KnowledgeHub",
+    description: "A blog platform with a dashboard for publishing and reading articles.",
+    github: "https://github.com/MustafaYamin/KnowledgeHub",
+    live: "https://knowledge-hub-smoky.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Blog"],
   },
 ]
 
@@ -76,6 +91,13 @@ const ProjectCard = ({ project, index }: { project: typeof FEATURED_PROJECTS[0],
             <p className="text-muted-foreground mb-4 line-clamp-3">
               {project.description}
             </p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="text-xs">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </div>
           <div className="flex gap-3 pt-4 mt-auto">
             <Button variant="outline" asChild>
@@ -114,7 +136,7 @@ export function ProjectsSection() {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A curated selection of my best work, with links to code and live demos.
+            AI agents, open-source tooling and full-stack products, with links to code and live demos.
           </p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">

@@ -3,48 +3,72 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Briefcase, Users, FileText, Heart, Rocket } from "lucide-react"
+import { Briefcase, Users, FileText, Heart, Rocket, Brain, Code2, GraduationCap } from "lucide-react"
 
 const experiences = [
   {
-    title: "Stream Coordinator",
-    company: "Stream Academy International",
-    period: "Current",
-    description: "Leading and managing sessions in AI, space science, and web development. Organizing hands-on learning experiences and coordinating educational initiatives across multiple technical disciplines.",
+    title: "AI Engineer",
+    company: "Inseyab Consulting & Information Solutions",
+    period: "Apr 2026 – Present · Full-time · Karachi (NASTP)",
+    description: "Building and deploying AI systems for enterprise clients across Pakistan and the Middle East. Helped deliver an intent-routed multi-agent sales analytics system on Azure & Microsoft Fabric (SAP HANA → Fabric) with incremental RAG, natural-language Power BI dashboards, daily C-suite email and audio briefings, and voice + chat interfaces. Built the FastAPI backend, PostgreSQL and Odoo integration for a smart-warehouse computer-vision platform that counts sacks in real time (~90% accuracy).",
+    icon: Brain,
+    highlights: ["Multi-Agent Systems", "OpenAI Agents SDK", "RAG", "Computer Vision", "FastAPI", "PostgreSQL", "Azure / Microsoft Fabric", "Docker"]
+  },
+  {
+    title: "Junior Full Stack Developer",
+    company: "E-services and Technologies",
+    period: "Oct 2025 – Apr 2026 · Full-time",
+    description: "Built responsive web applications and integrated generative and agentic AI features into client products. Developed production UIs in React, Next.js and Angular, built Node.js APIs on SQL and NoSQL databases, integrated LLM-powered features with the OpenAI Agents SDK, and containerised services with Docker.",
+    icon: Code2,
+    highlights: ["React", "Next.js", "Angular", "TypeScript", "Node.js", "OpenAI Agents SDK", "Docker"]
+  },
+  {
+    title: "Web Development Intern",
+    company: "E-services and Technologies",
+    period: "Feb 2025 – Oct 2025 · Karachi",
+    description: "Built front-end features in Angular and learned production workflows within the development team. Promoted to Junior Full Stack Developer in October 2025.",
     icon: Briefcase,
-    highlights: ["AI Education", "Session Management", "Technical Leadership", "Team Coordination"]
+    highlights: ["Angular", "Frontend Development", "Team Workflows"]
   },
   {
-    title: "Content Writer",
+    title: "AI & Aerospace Coordinator",
+    company: "Stream Academy International",
+    period: "May 2024 – Apr 2026 · Part-time",
+    description: "Coordinated AI, web development and aerospace learning programmes. Researched and implemented AI learning projects, mentored students through hands-on web and AI projects, and led workshops on High-Altitude Balloons and CubeSats.",
+    icon: GraduationCap,
+    highlights: ["AI Education", "Mentoring", "High-Altitude Balloons", "CubeSats", "Team Coordination"]
+  },
+  {
+    title: "Content Research & Writer",
     company: "Engagex Digital",
-    period: "Recent",
-    description: "Created engaging digital content with SEO strategy for tech and business niches. Developed comprehensive content marketing strategies and optimized content for maximum engagement and search visibility.",
+    period: "Mar 2024 – Sep 2024 · Part-time · Remote",
+    description: "Researched topics and keywords, and wrote SEO-optimised blogs, articles and product reviews for tech and business niches, from draft through publishing.",
     icon: FileText,
-    highlights: ["SEO Strategy", "Digital Marketing", "Content Creation", "Tech Writing"]
-  },
-  {
-    title: "Volunteer",
-    company: "Mommyology",
-    period: "Community Service",
-    description: "Assisted in nature-based learning events for children. Supported educational activities focused on environmental awareness and outdoor learning experiences.",
-    icon: Heart,
-    highlights: ["Nature Education", "Child Development", "Event Support", "Community Engagement"]
-  },
-  {
-    title: "Volunteer",
-    company: "Destination Imagination Pakistan",
-    period: "Competition Support",
-    description: "Supported teams in national creativity tournaments. Helped facilitate creative problem-solving challenges and provided mentorship to participating teams.",
-    icon: Users,
-    highlights: ["Creative Mentorship", "Team Support", "Problem Solving", "Competition Management"]
+    highlights: ["SEO Strategy", "Keyword Research", "Content Writing", "Digital Marketing"]
   },
   {
     title: "Frontend Developer",
     company: "NASA Space Apps Challenge",
     period: "Hackathon",
-    description: "Designed frontend interfaces for space tech hackathon projects. Collaborated with cross-functional teams to develop innovative solutions for space-related challenges.",
+    description: "Designed frontend interfaces for a space-tech hackathon project, collaborating with a cross-functional team on solutions to space-related challenges.",
     icon: Rocket,
     highlights: ["Frontend Development", "Space Technology", "Hackathon", "Team Collaboration"]
+  },
+  {
+    title: "Volunteer Challenge Master",
+    company: "Destination Imagination Pakistan",
+    period: "2023 · National Competition",
+    description: "Served as a Challenge Master and Appraiser at the national creativity tournament, facilitating creative problem-solving challenges for participating teams.",
+    icon: Users,
+    highlights: ["Creative Mentorship", "Judging", "Problem Solving", "Event Management"]
+  },
+  {
+    title: "Volunteer",
+    company: "Mommyology",
+    period: "Community Service",
+    description: "Assisted in nature-based learning events for children and later redesigned the organisation's website.",
+    icon: Heart,
+    highlights: ["Nature Education", "Event Support", "Community Engagement"]
   }
 ]
 
@@ -118,13 +142,13 @@ export function ExperienceSection() {
             Professional Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A journey through diverse roles in education, content creation, and technology development, building expertise across multiple domains.
+            From web development intern to AI Engineer: building production AI, full-stack products and learning programmes along the way.
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((experience, index) => (
-            <ExperienceCard key={experience.company} experience={experience} index={index} />
+            <ExperienceCard key={`${experience.title}-${experience.company}`} experience={experience} index={index} />
           ))}
         </div>
       </div>

@@ -4,42 +4,43 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Code, Brain, Wrench } from "lucide-react"
+import { Code, Brain, Server } from "lucide-react"
 
 const skillCategories = [
+  {
+    title: "AI & Agents",
+    icon: Brain,
+    skills: [
+      { name: "Python", level: 90 },
+      { name: "OpenAI Agents SDK", level: 85 },
+      { name: "Multi-Agent Systems", level: 85 },
+      { name: "RAG", level: 85 },
+      { name: "MCP (Model Context Protocol)", level: 80 },
+      { name: "Computer Vision", level: 75 },
+    ]
+  },
+  {
+    title: "Backend, Data & Cloud",
+    icon: Server,
+    skills: [
+      { name: "FastAPI", level: 85 },
+      { name: "PostgreSQL", level: 80 },
+      { name: "Node.js", level: 75 },
+      { name: "Docker", level: 75 },
+      { name: "Azure / Microsoft Fabric", level: 70 },
+      { name: "Odoo Integration", level: 70 },
+    ]
+  },
   {
     title: "Frontend Development",
     icon: Code,
     skills: [
-      { name: "HTML5", level: 95 },
-      { name: "CSS3", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "TypeScript", level: 80 },
-      { name: "TailwindCSS", level: 90 },
       { name: "Next.js", level: 85 },
-      { name: "React", level: 80 },
-      { name: "shadcn/ui", level: 85 },
-    ]
-  },
-  {
-    title: "Backend & AI Basics",
-    icon: Brain,
-    skills: [
-      { name: "Python", level: 75 },
-      { name: "APIs", level: 80 },
-      { name: "Mistral LLM", level: 70 },
-      { name: "Streamlit", level: 75 },
-    ]
-  },
-  {
-    title: "Tools & Technologies",
-    icon: Wrench,
-    skills: [
-      { name: "Git", level: 85 },
-      { name: "GitHub", level: 90 },
-      { name: "Figma", level: 80 },
-      { name: "Vercel", level: 85 },
-      { name: "VSCode", level: 95 },
+      { name: "React", level: 85 },
+      { name: "TypeScript", level: 85 },
+      { name: "TailwindCSS", level: 90 },
+      { name: "Angular", level: 75 },
+      { name: "Git & GitHub", level: 90 },
     ]
   }
 ]
@@ -99,7 +100,7 @@ export function SkillsSection() {
             Technical Skills
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise across frontend development, AI technologies, and essential development tools.
+            The stack I use to ship production AI systems, from agents and RAG to APIs, cloud data platforms and polished front ends.
           </p>
         </motion.div>
 
