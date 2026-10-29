@@ -45,7 +45,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground">
-              Frontend Developer & AI Enthusiast crafting innovative web experiences.
+              AI Engineer building multi-agent systems, computer vision and full-stack products.
             </p>
           </motion.div>
 
